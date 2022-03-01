@@ -27,11 +27,11 @@ const headersData = [
     href: "/events",
   },
   {
-    label: "Logout",
+    label: "Log Out",
     href: "/logout",
   },
   {
-    label: "Login",
+    label: "Log In",
     href: "/login",
   },
 ];
