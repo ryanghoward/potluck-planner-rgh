@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
-
 import styled from "styled-components";
 
 const StyledBackground = styled.div`
   background-image: url("https://253qv1sx4ey389p9wtpp9sj0-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/Dishes_at_Potluck.jpg");
   height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  @media (max-width: 1200px) {
-    background-size: contain;
-  }
 `;
+
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin: 50px auto;
 `;
+
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -32,6 +32,7 @@ const StyledForm = styled.form`
     padding: 30px;
   }
 `;
+
 const StyledLabel = styled.label`
   display: flex;
   flex-direction: row;
@@ -54,7 +55,6 @@ const StyledButton = styled.div`
 
 const CreateEvent = () => {
   const { push } = useHistory();
-
   const [formValues, setFromValues] = useState({
     name: "",
     organizer: "",
@@ -67,10 +67,7 @@ const CreateEvent = () => {
 
   const sendItems = (newPotluck) => {
     axiosWithAuth()
-      .post(
-        "https://buildweekpotlucklambda.herokuapp.com/api/potlucks",
-        newPotluck
-      )
+      .post("", newPotluck) // Potluck API endpoint will go here
       .then((res) => {
         push("/events");
         // setFromValues({
@@ -83,7 +80,7 @@ const CreateEvent = () => {
         // })
       })
       .catch((err) => {
-        setError("sorry something went wrong");
+        setError("ya fucked up boi");
         // console.log(err)
       });
   };
@@ -99,10 +96,8 @@ const CreateEvent = () => {
       food: formValues.food,
     };
     sendItems(newPotluck);
-
     // setPotluck(potluck.concat(newPotluck))
     // setPotluck(...potluck, newPotluck)
-
     // setFromValues({name: '', organizer: '', date: '', location: '', guests: '', food: ''})
   };
 
@@ -119,9 +114,9 @@ const CreateEvent = () => {
     <StyledBackground>
       <StyledDiv>
         <StyledForm onSubmit={submit}>
-          <h2>Start Planning!</h2>
+          <h2>Start Planning</h2>
           <StyledLabel>
-            <p>Name:</p>
+            <p>Name: </p>
             <input
               value={formValues.name}
               name='name'
@@ -131,7 +126,7 @@ const CreateEvent = () => {
             />
           </StyledLabel>
           <StyledLabel>
-            <p>Organizer:</p>
+            <p>Organizer: </p>
             <input
               value={formValues.organizer}
               name='organizer'
@@ -161,7 +156,7 @@ const CreateEvent = () => {
             />
           </StyledLabel>
           <StyledLabel>
-            <p>Add Guests:</p>
+            <p>Add Guests: </p>
             <input
               value={formValues.guests}
               name='guests'
