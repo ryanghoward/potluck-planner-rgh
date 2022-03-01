@@ -1,10 +1,18 @@
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
+
+//Components
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Potluck Planner</h1>
-    </div>
+    <>
+      <div className='App'>
+        <Switch>
+          <Route path='/' component={HomePage} />
+        </Switch>
+      </div>
+    </>
   );
 }
 
