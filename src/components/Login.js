@@ -29,7 +29,7 @@ const Login = (props) => {
   const logMeIn = (credentials) => {
     axios
       .post(
-        // Heroku URL goes here,
+        // Login API endpoint will go here,
         credentials
       )
       .then((res) => {
@@ -87,7 +87,7 @@ const Login = (props) => {
   };
 
   const textboxStyle = { margin: "0.8rem 0" };
-  const headerStyle = { fontFamily: "Outfit, sans-serif" };
+  const headerStyle = { fontFamily: "Outfit, sans-serif", color: "#808000" };
   const linkStyle = { fontFamily: "Outfit, sans-serif", margin: "0 0.4rem" };
   const iconStyle = { fontSize: "3rem" };
 
