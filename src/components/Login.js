@@ -38,7 +38,7 @@ const Login = (props) => {
         push("/events");
       })
       .catch((err) => {
-        setError("Username/Password Invalid");
+        setError("Username and/or Password is invalid");
         // console.log(err.message)
         // console.log(message)
         setState(initialState);
