@@ -1,7 +1,6 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 
-//Components
 // import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar";
@@ -23,8 +22,8 @@ function App() {
           <Route path='/logout' component={Logout} />
           <Route path='/register' component={Register} />
           <Route path='/createevent' component={CreateEvent} />
-          {/* ^^ Switch to private when endpoints are made */}
           <Route path='/events' component={Events} />
+          {/* ^^ Switch both event routes to PrivateRoute when endpoints are made and functional */}
         </Switch>
       </div>
     </>
