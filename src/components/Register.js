@@ -30,7 +30,7 @@ const Register = () => {
     };
     axios
       .post(
-        // Register API endpoint will go here,
+        "https://potluck-planner-rgh.herokuapp.com/api/users/register",
         user
       )
       .then((res) => {

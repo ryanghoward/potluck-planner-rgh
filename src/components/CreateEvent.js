@@ -67,7 +67,10 @@ const CreateEvent = () => {
 
   const sendItems = (newPotluck) => {
     axiosWithAuth()
-      .post("", newPotluck) // Potluck API endpoint will go here
+      .post(
+        "https://potluck-planner-rgh.herokuapp.com/api/potlucks",
+        newPotluck
+      )
       .then((res) => {
         push("/events");
         // setFromValues({
@@ -80,7 +83,7 @@ const CreateEvent = () => {
         // })
       })
       .catch((err) => {
-        setError("ya fucked up boi");
+        setError("There was an error");
         // console.log(err)
       });
   };

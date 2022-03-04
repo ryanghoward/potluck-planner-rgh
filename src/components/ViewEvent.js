@@ -87,7 +87,7 @@ const ViewEvent = (props) => {
 
   const getFoods = () => {
     axiosWithAuth()
-      .get() //food API endpoint goes here
+      .get("https://potluck-planner-rgh.herokuapp.com/api/foods")
       .then((res) => {
         setFoods(res.data);
       })

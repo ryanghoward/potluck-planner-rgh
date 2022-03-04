@@ -83,4 +83,5 @@ module.exports = {
   getAll,
   getPotluck,
   remove,
+  update,
 };

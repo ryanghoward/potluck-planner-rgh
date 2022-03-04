@@ -78,7 +78,7 @@ const Events = () => {
 
   const getEvents = () => {
     axiosWithAuth()
-      .get("") // Potlucks API endpoint will go here
+      .get("https://potluck-planner-rgh.herokuapp.com/api/potlucks")
       .then((res) => {
         // console.log(res);
         setEvents(res.data);

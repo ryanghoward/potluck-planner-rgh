@@ -11,7 +11,7 @@ export const registerNewUser = (newUser) => {
     //dispatch({type:FETCH_START})
     axios
       .post(
-        //! api/users/register endpoint URL will go here,
+        "https://potluck-planner-rgh.herokuapp.com/api/users/register",
         newUser
       )
       .then((res) => {
@@ -33,7 +33,7 @@ export const getUsers = () => {
     dispatch(fetchStart());
     //dispatch({type:FETCH_START})
     axios
-      .get() //! api/users endpoint URL will go here
+      .get("https://potluck-planner-rgh.herokuapp.com/api/users")
       .then((res) => {
         console.log(res);
         //   dispatch(fetchSuccess(res.data.results[0]));
@@ -57,7 +57,7 @@ export const userLogin = (payload) => {
     //dispatch({type:FETCH_START})
     axios
       .post(
-        //! api/users/login endpoint will go here,
+        "https://potluck-planner-rgh.herokuapp.com/api/users/login",
         payload
       )
       .then((res) => {

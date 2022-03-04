@@ -29,7 +29,7 @@ const Login = (props) => {
   const logMeIn = (credentials) => {
     axios
       .post(
-        // Login API endpoint will go here,
+        "https://potluck-planner-rgh.herokuapp.com/api/users/login",
         credentials
       )
       .then((res) => {
