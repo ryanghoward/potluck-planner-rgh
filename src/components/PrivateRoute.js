@@ -1,6 +1,4 @@
 import React from "react";
-
-// Change this from the  Redirect --
 import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {

@@ -14,9 +14,13 @@ const Logout = () => {
         localStorage.removeItem("token");
         push("/login");
       });
-  }, []);
+  }, [push]);
 
-  return <div></div>;
+  return (
+    <div>
+      <h1>Goodbye! Come back soon!</h1>
+    </div>
+  );
 };
 
 export default Logout;
