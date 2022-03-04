@@ -34,11 +34,9 @@ const Register = () => {
         user
       )
       .then((res) => {
-        // console.log(res)
         push("/login");
       })
       .catch((err) => {
-        // console.log(err.response.data.message)
         setError(err.response.data.message);
       });
   };

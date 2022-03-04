@@ -9,7 +9,6 @@ import Logout from "./components/Logout";
 import Register from "./components/Register";
 import CreateEvent from "./components/CreateEvent";
 import Events from "./components/Events";
-// import ViewEvent from "./components/ViewEvent";
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
           <Route path='/register' component={Register} />
           <Route path='/createevent' component={CreateEvent} />
           <Route path='/events' component={Events} />
-          {/* ^^ Switch both event routes to PrivateRoute when endpoints are made and functional */}
         </Switch>
       </div>
     </>

@@ -54,13 +54,6 @@ const getPotluck = async (potluck_id) => {
   }
 };
 
-// for getting foods with potlucks
-// select p.*, f.food_name from potluck_foods as pf
-// left join foods as f
-// on f.food_id = pf.food_id
-// left join potlucks as p
-// on p.potluck_id = pf.potluck_id
-
 const getById = (potluck_id) => {
   return db("potlucks").where({ potluck_id }).first();
 };

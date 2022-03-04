@@ -1,78 +1,56 @@
-//* will serve normal, non-token issues
 import axios from "axios";
-//* will serve protected routes
-//? import axiosWithAuth from './../utils/axiosWithAuth';
 
-//~ axios.post -- register new user
 export const registerNewUser = (newUser) => {
   return (dispatch) => {
-    //  dispatch(fetchStart());
     console.log("FETCHING new user");
-    //dispatch({type:FETCH_START})
+    dispatch({ type: FETCH_START });
     axios
       .post(
         "https://potluck-planner-rgh.herokuapp.com/api/users/register",
         newUser
       )
       .then((res) => {
-        console.log(res);
-        //   dispatch(fetchSuccess(res.data.results[0]));
-        //dispatch({type:FETCH_SUCCESS, payload:res.data.results[0]})
+        // console.log(res);
+        dispatch(fetchSuccess(res.data.results[0]));
+        dispatch({ type: FETCH_SUCCESS, payload: res.data.results[0] });
       })
       .catch((err) => {
         dispatch(fetchFail(err));
-        //dispatch({type:FETCH_ERROR, payload:err})
       });
   };
 };
 
-//~ axios.get = getUsers --- will we need a getUsers //? Maybe
 export const getUsers = () => {
   return (dispatch) => {
     console.log("GETTING new users");
     dispatch(fetchStart());
-    //dispatch({type:FETCH_START})
     axios
       .get("https://potluck-planner-rgh.herokuapp.com/api/users")
       .then((res) => {
-        console.log(res);
-        //   dispatch(fetchSuccess(res.data.results[0]));
-        //dispatch({type:FETCH_SUCCESS, payload:res.data.results[0]})
+        dispatch(fetchSuccess(res.data.results[0]));
       })
       .catch((err) => {
-        console.error(err);
-        //   dispatch(fetchFail(err));
-        //dispatch({type:FETCH_ERROR, payload:err})
+        dispatch(fetchFail(err));
       });
   };
 };
 
-//? axios.put = editUser --- will need for an edit user form
-
-//~ axios.post  -- login
 export const userLogin = (payload) => {
   return (dispatch) => {
-    console.log(payload);
     dispatch(fetchStart());
-    //dispatch({type:FETCH_START})
     axios
       .post(
         "https://potluck-planner-rgh.herokuapp.com/api/users/login",
         payload
       )
       .then((res) => {
-        console.log(res);
         dispatch(
           fetchSuccess(window.localStorage.setItem("token", res.data.token))
         );
-        //   dispatch(fetchSuccess('this is my user'));
-        //dispatch({type:FETCH_SUCCESS, payload:res.data.results[0]})
         dispatch(setMessage(res.data.message));
       })
       .catch((err) => {
-        console.log(err.response);
         dispatch(fetchFail(err));
-        //dispatch({type:FETCH_ERROR, payload:err})
       });
   };
 };

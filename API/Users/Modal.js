@@ -17,6 +17,7 @@ const addUser = async (user) => {
 
 module.exports = {
   getBy,
+  getById,
   addUser,
   getAll,
 };
