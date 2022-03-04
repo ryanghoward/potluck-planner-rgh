@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledBackground = styled.div`
-  background-image: url("https://253qv1sx4ey389p9wtpp9sj0-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/Dishes_at_Potluck.jpg");
+  background-image: url("https://images.unsplash.com/photo-1475869430886-fb14585f7443?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,22 +14,23 @@ const StyledBackground = styled.div`
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 50px auto;
+  margin: 4rem auto;
 `;
 
 const StyledForm = styled.form`
+  font-family: "Kaushan Script, cursive",
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  margin: 50px auto 0;
+  padding: 4rem;
+  margin: 4rem auto 0;
   background: rgba(255, 255, 255, 0.85);
-  border-radius: 15px;
-  color: #808000;
+  border-radius: 3rem;
+  color: #540804;
   height: auto;
-  border: black solid 1.5px;
-  @media (max-width: 1200px) {
-    margin: 50px auto;
-    padding: 30px;
+  box-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+  @media (max-width: 1000px) {
+    margin: 4rem auto;
+    padding: 2rem;
   }
 `;
 
