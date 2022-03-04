@@ -80,11 +80,10 @@ const Events = () => {
     axiosWithAuth()
       .get("https://potluck-planner-rgh.herokuapp.com/api/potlucks")
       .then((res) => {
-        // console.log(res);
         setEvents(res.data);
       })
       .catch((err) => {
-        // console.log(err.response);
+        console.error(err.response);
       });
   };
 

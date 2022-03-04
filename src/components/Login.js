@@ -12,9 +12,6 @@ import {
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
-// import { connect } from 'react-redux';
-// import { userLogin } from './../actions/userActions'
-
 const initialState = {
   username: "",
   password: "",
@@ -33,14 +30,11 @@ const Login = (props) => {
         credentials
       )
       .then((res) => {
-        // console.log(credentials)
         window.localStorage.setItem("token", res.data.token);
         push("/events");
       })
       .catch((err) => {
         setError("Username and/or Password is invalid");
-        // console.log(err.message)
-        // console.log(message)
         setState(initialState);
       });
   };
@@ -55,10 +49,6 @@ const Login = (props) => {
   const handleLogin = (e) => {
     e.preventDefault();
     logMeIn(state);
-
-    // props.userLogin(state)
-    // push('/newevent');
-    //lets push this to the /events page when that is set up
   };
 
   const handleSignUpClick = (event) => {
@@ -153,10 +143,4 @@ const Login = (props) => {
   );
 };
 
-// const mapStateToProps = (state) =>{
-//     return {
-//         user: state.userReducer.user
-//     }
-// }
-
-export default /* connect(mapStateToProps, { userLogin })( */ Login;
+export default Login;

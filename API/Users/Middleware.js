@@ -63,6 +63,7 @@ const checkUserPayload = (req, res, next) => {
 
 module.exports = {
   checkToken,
+  checkTokenId,
   checkUsernameExists,
   checkUsernameUnique,
   checkUserPayload,

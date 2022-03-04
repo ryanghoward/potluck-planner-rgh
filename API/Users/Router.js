@@ -4,21 +4,6 @@ const bcrypt = require("bcryptjs");
 const { tokenBuilder } = require("../tokenBuilder");
 const { checkUsernameExists, checkUsernameUnique } = require("./middleware");
 
-// router.get("/", (req, res, next) => {
-//     const { search } = req.params
-//     User.getAll().then(users => {
-//         const usernames = users.map(({ username }) => username)
-//         const searched = usernames.filter(u =>
-//             u.toLowerCase().includes(search.toLowerCase())
-//         )
-//         if (searched.length > 10) {
-//             res.status(200).json(searched.splice(0, 9))
-//         } else {
-//             res.status(200).json(searched)
-//         }
-//     }).catch(next)
-// })
-
 router.get("/", async (req, res) => {
   res.json(await User.getAll());
 });

@@ -73,18 +73,9 @@ const CreateEvent = () => {
       )
       .then((res) => {
         push("/events");
-        // setFromValues({
-        //     name: '',
-        //     organizer: '',
-        //     date: '',
-        //     location: '',
-        //     guests: formValues.guests,
-        //     food: formValues.food,
-        // })
       })
       .catch((err) => {
         setError("There was an error");
-        // console.log(err)
       });
   };
 
@@ -99,9 +90,6 @@ const CreateEvent = () => {
       food: formValues.food,
     };
     sendItems(newPotluck);
-    // setPotluck(potluck.concat(newPotluck))
-    // setPotluck(...potluck, newPotluck)
-    // setFromValues({name: '', organizer: '', date: '', location: '', guests: '', food: ''})
   };
 
   const handleClick = () => {
