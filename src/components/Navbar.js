@@ -47,14 +47,15 @@ const useStyles = makeStyles(() => ({
   },
   logo: {
     fontFamily: "Kaushan Script, cursive",
+    // fontFamily: "IM Fell English SC', serif",
     fontWeight: 600,
-    color: "#808000",
+    color: "#540804",
     textAlign: "left",
   },
   menuButton: {
     fontFamily: "Antic, sans-serif",
     fontWeight: 700,
-    color: "#808000",
+    color: "#540804",
     size: "1.25rem",
     marginLeft: "2.5rem",
   },
